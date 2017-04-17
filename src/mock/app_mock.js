@@ -1,4 +1,4 @@
-var Mock = require('mockjs');
+import Mock from 'mockjs';
 
 Mock.mock('/mock/api.DescribeCountBoard/', (param) => {
   return {
