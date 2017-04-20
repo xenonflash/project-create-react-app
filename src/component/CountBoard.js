@@ -1,8 +1,7 @@
 import React from 'react';
-
 var style = {
-  minWidth: '35px',
-  minHeight: '35px',
+  minWidth: '150px',
+  minHeight: '100px',
   fontSize: '25px',
   fontWeight: 'bold',
   testAlign: 'center',
@@ -10,16 +9,18 @@ var style = {
 };
 var colors = ['green', 'purple', 'orange', 'grey', 'blue', 'red'];
 var CountBoard = (props) => (
-  props.data.map((item, i) => {
-    return (
-      <div >
-        <div style={Object.assign({},{style}, {color: colors[i]})}>
-          {item.value}
-          <p>{item.name}</p>
+  <div style={{display: 'flex'}}>
+    {props.data.map((item, i) => {
+      return (
+        <div style={{border: '2px solid #aaa', borderRadius: '5px', margin: '10px', boxShadow: '0 0 8px #ddd'}}>
+          <div style={Object.assign({}, style, {color: colors[i]})}>
+            {item.value}
+            <p>{item.name}</p>
+          </div>
         </div>
-      </div>
-    );
-  })
+      );
+    })}
+  </div>
 );
 
 export default CountBoard;
