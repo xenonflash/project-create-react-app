@@ -1,0 +1,21 @@
+.pagination{
+  display: flex;
+}
+.pagination .item {
+  min-width: 20px;
+  min-height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border: 1px solid lightslategray;
+  border-radius: 3px;
+  transition: all 50ms linear;
+  cursor: pointer;
+  margin: 0 7px;
+}
+.pagination .item:hover,.pagination .item.active{
+  color: #fff;
+  background: lightslategray;
+}
+.pagination .disable {
+  background-color: #aaa;
+}
