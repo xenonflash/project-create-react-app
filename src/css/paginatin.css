@@ -7,6 +7,7 @@
   text-align: center;
   line-height: 20px;
   border: 1px solid lightslategray;
+  background: #fff;
   border-radius: 3px;
   transition: all 50ms linear;
   cursor: pointer;
