@@ -3,12 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-.app-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.main-nav{
+  background: transparent;
+  margin-left: auto;
+  font-size: 16px;
+  color: #ffd;
 }
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.main-nav .ant-menu-item a{
+  color: #fff;
 }
-
+.main-nav .ant-menu-item{
+  margin: 0 15px;
+}

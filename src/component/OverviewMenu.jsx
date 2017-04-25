@@ -1,19 +1,27 @@
 import React, {Component} from 'react'
 import {Select, Input, Button} from 'antd'
-const {Option} = Select;
+import '../css/overviewMenu.css'
+const Option = Select.Option;
 
-var OverviewMenu = (props) => (
-  <div className="overview-menu">
-    <Select>
+var OverviewMenu = (props) => {
+  let currBoard = props.boardList.filter(item => {return item.id === props.currBoard;})[0];
+  return(
+    <div className="overview-menu">
       {
-        props.boardList.map((item) => {
-          return (
-            <Option key={item.id} onClick={props.handleBoardChange.bind(item)}>{item.name}</Option>
-          );
-        })
+        props.boardList.length ?
+        <Select defaultValue={currBoard.name} onChange={props.handleBoardChange}>
+          {
+            props.boardList.map((item) => {
+              return (
+                <Option key={item.id} value={item.id}>{item.name}</Option>
+              );
+            })
+          }
+        </Select> : ''
       }
-    </Select>
-    <Input value={props.currBoard.name}/>
-    <Button></Button>
-  </div>
-);
+      <Input value={currBoard ? currBoard.name : ''} className='overview-menu-title'/>
+      <Button>删除</Button>
+    </div>
+  );
+}
+export  default OverviewMenu;

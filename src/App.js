@@ -14,6 +14,7 @@ class App extends Component {
     super(props);
     this.state = {
       countBoardData: [],
+      currBoard: null,
       TicketData: [],
       currNotice: null,
       noticeData: [],
@@ -29,10 +30,11 @@ class App extends Component {
   getBoardData() {
     $.ajax('/mock/api.describeBoard').then((res) => {
       res = JSON.parse(res);
+      console.log(res);
       if (res.ret_code === 0) {
         this.setState({
           boardList: res.ret_set,
-          currBoard: res.ret_set.filter((item) => {return !!item.curr})[0]
+          currBoard: res.ret_set.filter((item) => {return item.curr})[0].name
         });
       }
     });
@@ -51,7 +53,6 @@ class App extends Component {
   getTicketData() {
     $.ajax('/mock/api.describeTicket').then((res) => {
       res = JSON.parse(res);
-      console.log(res.ret_set);
       if (res.ret_code === 0) {
         this.setState({
           TicketData: res.ret_set
@@ -79,20 +80,21 @@ class App extends Component {
     this.setState({noticeModalShow: false})
   }
   handleBoardChange = (board) => {
+    debugger;
     this.setState({currBoard: board});
   }
   render() {
     return (
       <div className="App">
-        <div className="today-summary">
-          <CountBoard data={this.state.countBoardData} style={{flex: '4 1'}}/>
-          <TodayNotice noticeList={this.state.noticeData} style={{flex: '1 1'}} onSelect={this.handleNotice}/>
-        </div>
         <OverviewMenu
           boardList={this.state.boardList}
           handleBoardChange={this.handleBoardChange}
           currBoard={this.state.currBoard}
         />
+        <div className="today-summary">
+          <CountBoard data={this.state.countBoardData} style={{flex: '4 1'}}/>
+          <TodayNotice noticeList={this.state.noticeData} style={{flex: '1 1'}} onSelect={this.handleNotice}/>
+        </div>
         {
             this.state.TicketData.map((item, index) => {
             return (
