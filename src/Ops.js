@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Layout, Breadcrumb} from 'antd';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import TicketView from './component/TicketView'
+import TicketView from './component/TicketView.jsx'
 const {Sider, Content} = Layout;
 class Ops extends Component {
   constructor(props) {

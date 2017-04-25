@@ -1,0 +1,28 @@
+.count-board{
+  display: flex;
+  justify-content: center;
+}
+.count-board-item{
+  min-width: 150px;
+  min-height: 100px;
+  font-weight: bold;
+  text-align: center;
+  margin: 15px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ddd;
+  transition: all 200ms linear;
+}
+.count-board-item:hover{
+  box-shadow: 0 0 20px #aaa;
+}
+.count-board-value{
+  font-style: italic;
+  font-size: 50px; 
+}
+.count-board-name{
+  padding: 3px 1em;
+  border-radius: 100px;
+  background: lightslategray;
+  margin: 15px 1em;
+}

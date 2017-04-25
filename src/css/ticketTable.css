@@ -1,0 +1,5 @@
+.ticket-table .ant-card-bordered{
+  border: 2px solid lightslategray;
+  border-radius: 10px;
+  margin: 20px 30px;
+}

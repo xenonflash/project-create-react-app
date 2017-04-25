@@ -1,0 +1,9 @@
+.overview-menu{
+  display: flex;
+  box-shadow: 0 0 10px #aaa;
+  padding: 15px 0;
+}
+.overview-menu-title{
+  margin: 0 auto;
+  flex-basis: 200px;
+}
