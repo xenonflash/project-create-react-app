@@ -1,6 +1,6 @@
 import Mock from 'mockjs';
 
-Mock.mock(/\/mock\/api\.Describe/, (param) => {
+Mock.mock(/^\/mock\/api\.DescribeCountBoard$/, (param) => {
   return {
     ret_code: 0,
     ret_msg: 'succ',
@@ -12,7 +12,7 @@ Mock.mock(/\/mock\/api\.Describe/, (param) => {
       {name: 'CMDB', value: 1},
     ]
   }
-}).mock('/mock/api.describeTicket', {
+}).mock(/^\/mock\/api.describeTicket$/, {
   ret_code: 0,
   ret_msg: 'succ',
   ret_set: [
@@ -50,7 +50,7 @@ Mock.mock(/\/mock\/api\.Describe/, (param) => {
       address: '10 Downing Street'
     }]
   ]
-}).mock('/mock/api.describeNoticeTopFour', {
+}).mock(/^\/mock\/api.describeNoticeTopFour$/, {
   ret_code: 0,
   ret_msg: 'succ',
   ret_set: [
@@ -59,7 +59,7 @@ Mock.mock(/\/mock\/api\.Describe/, (param) => {
     {id: 'asd-4324', text: '大师傅', content: "后天天气貌似也不错后天天气貌似也不错后天天气貌似也不错后天天气貌似也不错后天天气貌似也不错后天天气貌似也不错后天天气貌似也不错后天天气貌似也不错"},
     {id: 'asd-1232', text: '按时大大', content: "大后天的天体就不知道了,.大后天的天体就不知道了,.大后天的天体就不知道了,.大后天的天体就不知道了,.大后天的天体就不知道了,.大后天的天体就不知道了,.大后天的天体就不知道了,."}
   ]
-}).mock('/mock/api.describeBoard', {
+}).mock(/^\/mock\/api.describeBoard$/, {
   ret_code: 0,
   ret_msg: 'succ',
   ret_set: [
