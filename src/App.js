@@ -4,11 +4,10 @@ import Pagination from './component/Pagination.jsx';
 import TicketTable from './component/TicketTable.jsx';
 import TodayNotice from './component/TodayNotice.jsx'
 import OverviewMenu from './component/OverviewMenu.jsx'
-import {Modal} from 'antd';
+import {Modal, Carousel} from 'antd';
 import $ from 'jquery';
 import './App.css';
 import './mock/app_mock';
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +39,7 @@ class App extends Component {
     });
   }
   getCountBoard() {
-    $.ajax('/mock/api.Describe').then((res) =>{
+    $.ajax('/mock/api.DescribeCountBoard').then((res) =>{
       res = JSON.parse(res);
       if (res.ret_code === 0) {
         console.log(res.ret_code);
@@ -86,11 +85,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <OverviewMenu
+        {/*<OverviewMenu
           boardList={this.state.boardList}
           handleBoardChange={this.handleBoardChange}
           currBoard={this.state.currBoard}
-        />
+        />*/}
+        <Carousel autoplay>
+          <div style={{backgroundImage: `url(${require('../images/banner/1.jpg')})`}}></div>
+          <div style={{backgroundImage: `url(${require('../images/banner/2.jpg')})`}}></div>
+          <div style={{backgroundImage: `url(${require('../images/banner/3.jpg')})`}}></div>
+        </Carousel>
         <div className="today-summary">
           <CountBoard data={this.state.countBoardData} style={{flex: '4 1'}}/>
           <TodayNotice noticeList={this.state.noticeData} style={{flex: '1 1'}} onSelect={this.handleNotice}/>

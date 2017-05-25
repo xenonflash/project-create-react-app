@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Ops from './Ops'
+import Console from './Console'
 import logo from './logo.svg';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {Layout, Menu, Icon} from 'antd';
 const MenuItem = Menu.Item;
 import './index.css';
-
 
 const {Header} = Layout;
 var Config = () => (
@@ -20,12 +20,14 @@ var Config = () => (
           <MenuItem><Link to="/ops"><Icon type="setting"/>ops</Link></MenuItem>
           <MenuItem><Link to="/monitor"><Icon type="pie-chart"/>monitor</Link></MenuItem>
           <MenuItem><Link to="/ticket"><Icon type="code"/>ticket</Link></MenuItem>
+          <MenuItem><Link to="/console"><Icon type="code"/>console</Link></MenuItem>
         </Menu>
       </Header>
       <Route exact path='/' component={App}/>
       <Route exact path='/ops' component={Ops}/>
       <Route exact path='/monitor' component={App}/>
       <Route exact path='/ticket' component={App}/>
+      <Route exact path='/console' component={Console}/>
     </Layout>
   </Router>
 );

@@ -18,3 +18,9 @@ body{
 .today-summary{
   display: flex;
 }
+.ant-carousel .slick-slide{
+  height: 295px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
